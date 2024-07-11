@@ -1,0 +1,160 @@
+
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fs-2" href="#">
+        <h2>Welcome <span class="text-info fw-bold fs-3 text-uppercase">{{ username }}</span></h2>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto ">
+          <li class="btn btn-primary me-3">
+            <a class="nav-link active text-white" aria-current="page" ng-click="showFriendRequests()">Friend Request</a>
+          </li>
+          <li class="btn btn-warning me-3">
+            <a class="nav-link text-white" ng-click="showFriends()">View Friends</a>
+          </li>
+          <li class="btn btn-danger me-3">
+            <a class="nav-link text-white" href="#!/">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5 fs-3">
+    <ul class="nav justify-content-center fst-italic">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" ng-click="bookticket()">Book Ticket</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ng-click="bevarageSnacks()">Beverages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ng-click="bookingDetails()">Booking Details</a>
+      </li>
+    </ul>
+    <hr class="text-danger border-4 ">
+
+    <div class="container mt-5">
+      <div class="container" ng-show="showBooking">
+        <div class="row g-5">
+          <h3 class="text-center mt-4">{{ bookingMessage }}</h3>
+          <div class="col-md-4" ng-repeat="movie in movies" ng-if="movie.approved">
+            <div class="card h-100">
+              <img class="card-img-top img-fluid" ng-src="{{ movie.movie }}" style="width: 100%;height: 220px;">
+              <div class="card-body">
+                <h3 class="card-title text-center text-uppercase fw-bold">{{ movie.title }}</h3>
+                <p class="card-text text-secondary fs-4">Available tickets: <span class=" text-info fs-4"> {{
+                    movie.ticket_count }}</p>
+                <p class="card-text text-secondary fs-4">Language: <span class="text-info fs-4"> {{ movie.language
+                    }}</span></p>
+                <p class="card-text text-secondary d-flex justify-content-between fs-4"><span>Time:<span
+                      class="text-info fs-4"> {{ movie.time }}</span></span>
+                  <span>Price:<span class=" text-info fs-4"> {{ movie.price }}</span></span>
+                </p>
+                <button ng-click="bookingDetails(movie)" type="button" class="form-control bg-warning mt-3 fs-5 p-2">Booking
+                  Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" ng-if="showBeverage">
+        <div class="row g-5">
+          <h3 class="text-center mt-4">{{ bookingMessage }}</h3>
+          <div class="col-md-3" ng-repeat="beverage in beverages" ng-if="beverage.approved">
+            <div class="card h-100">
+              <img class="img-fluid" ng-src="{{ beverage.item }}" style="width: 100%;height: 150px;">
+              <div class="card-body">
+                <h3 class="card-title text-secondary fw-bold">{{ beverage.itemName }}</h3>
+                <p class="card-text text-secondary fs-4">Price:<span class="fs-3 text-info"> {{ beverage.price }}</span>
+                </p>
+                <input type="number" class=" form-control"></input>
+                <button ng-click="bookNowBtn(beverage)" type="button" class="form-control bg-warning mt-3 fs-5 p-2">Order
+                  Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Booking details section -->
+ 
+<div class="container fs-2" ng-show="showDetails">
+  <div>
+  <div class="card">
+    <div class="card-body">
+  <h2 class="text-center fst-italic text-info">Booking Details</h2>
+  <form class="form-check" name="bookingForm">
+    <div class="d-flex">
+      <label class="fst-italic text-secondary fs-3">No of Tickets</label>
+      <input class="form-control text-center w-50 ms-2" type="number" ng-model="numTickets" ng-change="calculateTotalPrice()" min="1" required>
+    </div>
+    <div>
+      <p class="fst-italic text-secondary fs-3">Selected Movie: {{ selectedMovie.title }}</p>
+    </div>
+    <div ng-repeat="beverage in selectedBeverages">
+      <label class="fst-italic text-secondary fs-3">Quantity of {{beverage.itemName}}:</label>
+      <input class="form-control text-center w-50 ms-2" type="number" ng-model="beverage.quantity" ng-change="calculateTotalPrice()" min="1" required>
+    </div>
+    <p class="fst-italic text-secondary fs-3">Total Price: {{ totalPrice }}</p>
+    <div class="d-flex justify-content-center">
+      <input type="button" value="Confirm Booking" class="btn btn-lg bg-info text-white text-uppercase fst-italic p-2 w-50 " ng-click="confirmBooking()" ng-disabled="!bookingForm.$valid">
+    </div>
+  </form>
+</div>
+</div>
+</div>
+
+<!-- Booking details list -->
+<div class="container fs-2">
+  <h1>Booking Details List</h1>
+  <div ng-repeat="booking in bookingDetailsList">
+    <p>Movie: {{ booking.title }}</p>
+    <p>Tickets: {{ booking.tickets }}</p>
+    <p>Movie Price: {{ booking.moviePrice }}</p>
+    <p>Total Movie Price: {{ booking.totalMoviePrice }}</p>
+    <p>Beverages:</p>
+    <ul>
+      <li ng-repeat="beverage in booking.beverages">
+        {{ beverage.itemName }} - Quantity: {{ beverage.quantity }} - Price: {{ beverage.price }}
+      </li>
+    </ul>
+    <p>Total Beverage Price: {{ booking.totalBeveragePrice }}</p>
+    <p>Total Price: {{ booking.totalPrice }}</p>
+    <hr>
+  </div>
+</div>
+</div>
+<div class="container mt-5 fs-3">
+  <!-- Friend Requests Section -->
+  <div ng-show="showFriendRequestsSection">
+    <h3 class="text-center">Friend Requests</h3>
+    <div ng-repeat="request in friendRequests" class="d-flex justify-content-between align-items-center mb-3">
+      <div>{{ request.name }}</div>
+      <div>
+        <button class="btn btn-success me-2" ng-click="acceptRequest(request)">Accept</button>
+        <button class="btn btn-danger" ng-click="rejectRequest(request)">Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Friends List Section -->
+  <div ng-show="showFriendsSection">
+    <h3 class="text-center">Your Friends</h3>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="friend in friends">
+        {{ friend.name }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>

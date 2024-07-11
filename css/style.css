@@ -1,0 +1,27 @@
+body {
+  color: #ffffff;
+  font-size: 20px;
+  /* background: url('../assets/img/body-bg.jpeg'); */
+  /* background-color: #e37be3; */
+/* background-image: linear-gradient(0deg, #e37be3 0%, #3addf1 50%, #1f1c1c 100%); */
+/* width: 100%; */
+/* height: 100%;  */
+/* background-size: cover; */
+/* background-repeat: no-repeat; */
+}
+
+.overflow-auto {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.log-reg-col-bg{
+  background: url('../assets/img/log-reg-col-bg.jpeg');
+}
+
+.log-reg-bg{
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+

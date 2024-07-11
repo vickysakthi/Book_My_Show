@@ -1,0 +1,77 @@
+{
+    "beverages": [
+      {
+        "id": 1,
+        "item": "assets/img/coffee.avif",
+        "itemName": "Coffee",
+        "price": 140
+      },
+      {
+        "id": 2,
+        "item": "assets/img/tea.jpg",
+        "itemName": "Masal_ Tea",
+        "price": 100
+      },
+      {
+        "id": 3,
+        "item": "assets/img/orange-juice.jpg",
+        "itemName": "Orange_Juice",
+        "price": 120
+      },
+      {
+        "id": 4,
+        "item": "assets/img/ice_cream.avif",
+        "itemName": "Ice_Cream",
+        "price": 140
+      },
+      {
+        "id": 5,
+        "item": "assets/img/popcorn.avif",
+        "itemName": "Popcorn",
+        "price": 180
+      },
+      {
+        "id": 6,
+        "item": "assets/img/coldcoffe.webp",
+        "itemName": "Col_Coffee",
+        "price": 200
+      },
+      {
+        "id": 7,
+        "item": "assets/img/sandwich.avif",
+        "itemName": "Sanwich",
+        "price": 120
+      },
+      {
+        "id": 8,
+        "item": "assets/img/burger.jpg",
+        "itemName": "Burger",
+        "price": 180
+      },
+      {
+        "id": 9,
+        "item": "assets/img/french_fries.png",
+        "itemName": "French_Fries",
+        "price": 160
+      },
+      {
+        "id": 10,
+        "item": "assets/img/pizza.avif",
+        "itemName": "Pizza",
+        "price": 260
+      },
+      {
+        "id": 11,
+        "item": "assets/img/popcorn_big.jpg",
+        "itemName": "Popcorn",
+        "price": 240
+      },
+      {
+        "id": 12,
+        "item": "assets/img/pepsi.jpg",
+        "itemName": "Pepsi",
+        "price": 100
+      }
+    ]
+  }
+  

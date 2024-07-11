@@ -1,0 +1,123 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-secondary">
+    <div class="container-fluid">
+      <img src="../assets/img/ticket-image.avif" alt="ticket-img" width="150px" height="75px" />
+      <a class="navbar-brand text-danger fs-2" href="#">Booking Now</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="btn btn-primary me-3">
+            <a class="nav-link active text-white" aria-current="page" href="#">Admin</a>
+          </li>
+          <li class="btn btn-warning me-3">
+            <a class="nav-link text-white" href="#!/register">Signup</a>
+          </li>
+          <li class="btn btn-danger me-3">
+            <a class="nav-link text-white" href="#!/">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <button class="btn btn-success btn-lg mt-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+    aria-controls="offcanvasRight">
+    Dashboard
+  </button>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Dashboard</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <button ng-click="homeFunction()" type="button" value="Home" class="form-control my-4 p-2 bg-warning fs-3">
+        Home
+      </button>
+      <button ng-click="moviesFunction()" type="button" value="Movies" class="form-control my-4 p-2 bg-warning fs-3">
+        Movies
+      </button>
+      <button ng-click="snacksFunction()" type="button" value="snacks" class="form-control my-4 p-2 bg-warning fs-3">
+        Snacks
+      </button>
+      <button type="button" value="Customer" class="form-control my-4 p-2 bg-warning fs-3">
+        Customer
+      </button>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="card mb-3" ng-show="moviesStocks">
+      <div class="card-body">
+        <h3 class="text-center text-info">{{ message }}</h3>
+        <div class="overflow-auto" style="max-height: 697px">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Movie</th>
+                <th>Title</th>
+                <th>Language</th>
+                <th>Time</th>
+                <th>Approve</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="movie in movies">
+                <td>{{ movie.id }}</td>
+                <td>
+                  <img ng-src="{{ movie.movie }}" alt style="width: 200px; height: 100px" />
+                </td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.language }}</td>
+                <td>{{ movie.time }}</td>
+                <td>
+                  <button class="btn btn-primary" ng-click="approveMovie(movie)">
+                    Approve
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3" ng-show="snacksStocks">
+      <div class="card-body">
+        <h3 class="text-center text-info">{{ snacksmsg }}</h3>
+        <div class="overflow-auto" style="max-height: 697px">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Snacks</th>
+                <th>ItemName</th>
+                <th>Price</th>
+                <th>Approve</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="beverage in beverages">
+                <td>{{ beverage.id }}</td>
+                <td>
+                  <img ng-src="{{ beverage.item }}" alt style="width: 200px; height: 100px" />
+                </td>
+                <td>{{ beverage.itemName }}</td>
+                <td>{{ beverage.price }}</td>
+                <td>
+                  <button class="btn btn-primary" ng-click="approveSnacks(beverage)">
+                    Approve
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

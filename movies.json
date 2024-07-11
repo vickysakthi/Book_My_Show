@@ -1,0 +1,185 @@
+ {
+ "movies":[
+  {
+    "id": 1,
+    "movie": "assets/img/inception.jpg",
+    "title": "Inception",
+    "language": "English",
+    "time": "7:00 PM",
+    "ticket_count":100,
+    "price":200
+  },
+  {
+    "id": 2,
+    "movie": "assets/img/parasite.jpg",
+    "title": "Parasite",
+    "language": "Korean",
+    "time": "8:00 PM",
+    "ticket_count":78,
+    "price":250
+  },
+  {
+    "id": 3,
+    "movie": "assets/img/parking.jfif",
+    "title": "Parking",
+    "language": "Tamil",
+    "time": "6:00 PM",
+    "ticket_count":80,
+    "price":240
+
+  },
+  {
+    "id": 4,
+    "movie": "assets/img/Amelie.png",
+    "title": "Amelie",
+    "language": "French",
+    "time": "9:00 PM",
+    "ticket_count":90,
+    "price":180
+  },
+  {
+    "id": 5,
+    "movie": "assets/img/sarkar.jpg",
+    "title": "Sarkar",
+    "language": "Tamil",
+    "time": "2:00 PM",
+    "ticket_count":98,
+    "price":190
+  },
+  {
+    "id": 6,
+    "movie": "assets/img/theri.jpg",
+    "title": "Theri",
+    "language": "Tamil",
+    "time": "3:00 PM",
+    "ticket_count":70,
+    "price":200
+  },
+  {
+    "id": 7,
+    "movie": "assets/img/salar.jpg",
+    "title": "Salar",
+    "language": "Tamil",
+    "time": "9:00 AM",
+    "ticket_count":92,
+    "price":240
+  },
+  {
+    "id": 8,
+    "movie": "assets/img/mankatha.webp",
+    "title": "Mangatha",
+    "language": "Tamil",
+    "time": "11:00 AM",
+    "ticket_count":80,
+    "price":150
+  },
+  {
+    "id": 9,
+    "movie": "assets/img/outer-bank.jpg",
+    "title": "Outer-Bank",
+    "language": "English",
+    "time": "9:00 PM",
+    "ticket_count":60,
+    "price":180
+  },
+  {
+    "id": 10,
+    "movie": "assets/img/throuh-window.jpg",
+    "title": "Through Window",
+    "language": "Korean",
+    "time": "4:00 PM",
+    "ticket_count":90,
+    "price":200
+  },
+  {
+    "id": 11,
+    "movie": "assets/img/witcher.jfif",
+    "title": "Witcher",
+    "language": "English",
+    "time": "10:00 PM",
+    "ticket_count":96,
+    "price":250
+  },
+  {
+    "id": 12,
+    "movie": "assets/img/don.jpg",
+    "title": "Don",
+    "language": "Tamil",
+    "time": "11:00 PM",
+    "ticket_count":75,
+    "price":220
+  },
+  {
+    "id": 13,
+    "movie": "assets/img/after.jpg",
+    "title": "After",
+    "language": "English",
+    "time": "9:00 PM",
+    "ticket_count":100,
+    "price":190
+  },
+  {
+    "id": 14,
+    "movie": "assets/img/kaithi.jpg",
+    "title": "Kaidhi",
+    "language": "Tamil",
+    "time": "12:00 PM",
+    "ticket_count":80,
+    "price":180
+  },
+  {
+    "id": 15,
+    "movie": "assets/img/joker.jpg",
+    "title": "Joker",
+    "language": "French",
+    "time": "11:00 PM",
+    "ticket_count":100,
+    "price":200
+  },
+  {
+    "id": 16,
+    "movie": "assets/img/jai-bhim.webp",
+    "title": "Jai-Bhim",
+    "language": "Tamil",
+    "time": "9:00 PM",
+    "ticket_count":70,
+    "price":160
+  },
+  {
+    "id": 17,
+    "movie": "assets/img/wednesday.jpg",
+    "title": "Wednesday",
+    "language": "French",
+    "time": "9:00 PM",
+    "ticket_count":100,
+    "price":240
+  },
+  {
+    "id": 18,
+    "movie": "assets/img/remo.webp",
+    "title": "Remo",
+    "language": "Tamil",
+    "time": "9:00 AM",
+    "ticket_count":89,
+    "price":150
+  },
+  {
+    "id": 19,
+    "movie": "assets/img/animal.jpg",
+    "title": "Animal",
+    "language": "Telungu",
+    "time": "7:00 PM",
+    "ticket_count":50,
+    "price":200
+  },
+  {
+    "id": 20,
+    "movie": "assets/img/fighter.jpg",
+    "title": "Fighter",
+    "language": "Hindi",
+    "time": "4:00 PM",
+    "ticket_count":100,
+    "price":220
+  }
+]
+}

@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="card border-2 border-warning">
+    <div class="row g-0">
+      <div class="col-md-6 log-reg-col-bg">
+        <div class="card-body">
+          <h2 class="text-center text-info fst-italic fw-bold">Signup</h2>
+          <form name="registerForm" ng-submit="register()" novalidate>
+            <div class="m-4">
+              <label class="text-white fst-italic">UserName</label>
+              <input type="text" class="form-control text-white bg-black"
+                placeholder="Enter your Username" ng-model="user.username"
+                required>
+              <span
+                ng-show="registerForm.username.$touched && registerForm.username.$invalid"
+                class="text-danger">Username is required.</span>
+            </div>
+            <div class="m-4">
+              <label class="text-white fst-italic">Email</label>
+              <input type="email" class="form-control text-white bg-black"
+                placeholder="Enter your Email" ng-model="user.email" required>
+              <span
+                ng-show="registerForm.email.$touched && registerForm.email.$invalid"
+                class="text-danger">Valid email
+                is required.</span>
+            </div>
+            <div class="m-4">
+              <label class="text-white fst-italic">Password</label>
+              <input type="password" class="form-control text-white bg-black" placeholder="Password"
+                ng-model="user.password" required>
+              <span
+                ng-show="registerForm.password.$touched && registerForm.password.$invalid"
+                class="text-danger">Password is required.</span>
+            </div>
+            <div class="m-4">
+              <button type="submit"
+                class="text-white fw-bold fs-5 fst-italic btn w-100 btn-info rounded-pill">Register Here</button>
+            </div>
+          </form>
+          <h5 class="d-flex justify-content-center fst-italic text-info">Already you have an
+            account?<a
+              class="text-white nav-link ms-1" href="#!/">Signin</a></h5>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img class="img-fluid log-reg-bg" src="assets/img/log-reg-bg.jpg" alt="Homeimage">
+      </div>
+    </div>
+  </div>
+</div>

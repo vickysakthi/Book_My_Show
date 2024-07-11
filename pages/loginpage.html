@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <div class="card border-2 border-warning">
+    <div class="row g-0">
+      <div class="col-md-6 log-reg-col-bg">
+        <div class="card-body ">
+          <h3 class="text-center text-info">Signin</h3>
+          <form name="loginForm" ng-submit="login()" novalidate>
+            <div class="m-4">
+              <label class="text-white fst-italic">UserName</label>
+              <input type="text" class="form-control text-white bg-black" placeholder="Enter your Username" ng-model="loginData.username"
+                required />
+              <span ng-show="loginForm.username.$touched && loginForm.username.$invalid" class="text-danger">Username is
+                required.</span>
+            </div>
+            <div class="m-4">
+              <label class="text-white fst-italic">Password</label>
+              <input type="password" class="form-control text-white bg-black" placeholder="Password" ng-model="loginData.password"
+                required />
+              <span ng-show="loginForm.password.$touched && loginForm.password.$invalid" class="text-danger">Password is
+                required.</span>
+            </div>
+            <div class="m-4">
+              <button type="submit" class="text-white fst-italic fw-bold btn w-100 btn-info rounded-pill">
+                Login Here
+              </button>
+            </div>
+          </form>
+          <h5 class="d-flex justify-content-center fst-italic text-info">
+            You don't have account Register here?<a class="text-white nav-link ms-1" href="#!/registerpage">Signin</a>
+          </h5>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img class="img-fluid log-reg-bg" src="assets/img/log-reg-bg.jpg" alt="Homeimage" />
+      </div>
+    </div>
+  </div>
+</div>
